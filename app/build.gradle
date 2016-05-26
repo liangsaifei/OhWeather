@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply from: '../config.gradle'
+
+android {
+    buildTypes {
+        debug {
+            applicationIdSuffix '.debug'
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile kotlib
+    compile project(":data")
+    compile "com.github.nekocode:kotgo:0.9.6"
+
+    // Android support library
+    compile "com.android.support:appcompat-v7:$supportLibVersion"
+    compile "com.android.support:recyclerview-v7:$supportLibVersion"
+
+    // Reactive library
+    compile "io.reactivex:rxkotlin:$rxkotlinVersion"
+    compile "io.reactivex:rxandroid:$rxandroidVersion"
+
+    // DSL
+    compile "org.jetbrains.anko:anko-sdk15:$ankoVersion" // sdk19, sdk21, sdk23 are also available
+    compile "org.jetbrains.anko:anko-support-v4:$ankoVersion" // In case you need support-v4 bindings
+    compile "org.jetbrains.anko:anko-appcompat-v7:$ankoVersion" // For appcompat-v7 bindings
+
+    // Artwork
+    compile "com.squareup.picasso:picasso:$picassoVersion"
+}
