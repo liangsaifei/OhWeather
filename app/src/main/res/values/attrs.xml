@@ -3,7 +3,7 @@
     <declare-styleable name="DialProgressBar">
         <attr name="progress_color" format="color" />
         <attr name="max_value" format="integer" />
-        <attr name="duration" format="integer" />
+        <attr name="animation_duration" format="integer" />
         <attr name="normal_color" format="color" />
         <attr name="line_stroke_width" format="integer" />
         <attr name="progress_line_height" format="dimension" />

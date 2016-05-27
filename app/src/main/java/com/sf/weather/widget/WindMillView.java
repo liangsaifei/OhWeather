@@ -26,8 +26,6 @@ import com.sf.weather.R;
 public class WindmillView extends View {
 
 
-
-
     private int mHeight;
     private int mWidth;
     private Bitmap littleBallBitmap;

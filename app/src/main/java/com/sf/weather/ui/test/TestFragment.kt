@@ -39,4 +39,9 @@ class TestFragment : BaseFragment() {
 
     }
 
+    override fun onBackPressed(): Boolean {
+        toast("finished")
+        return super.onBackPressed()
+    }
+
 }

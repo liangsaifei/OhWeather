@@ -36,8 +36,6 @@ class WeatherService {
 
 
     interface APIs {
-//        @GET("{count}/{pageNum}")
-//        fun getMeizi(@Path("count") count: Int, @Path("pageNum") pageNum: Int): Observable<ResponseWrapper<Meizi>>
 
 
         @GET("weather")

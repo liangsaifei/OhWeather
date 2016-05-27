@@ -84,7 +84,7 @@ public class DialProgressBar extends View {
     private void init(Context context, AttributeSet attrs) {
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.DialProgressBar);
         maxValue = a.getInteger(R.styleable.DialProgressBar_max_value, 100);
-        totalDuration = a.getInteger(R.styleable.DialProgressBar_duration, 1000);
+        totalDuration = a.getInteger(R.styleable.DialProgressBar_animation_duration, 1000);
         strokeWidth = a.getInteger(R.styleable.DialProgressBar_line_stroke_width, 3);
         lineHeight = a.getDimension(R.styleable.DialProgressBar_progress_line_height, dip(20));
 
