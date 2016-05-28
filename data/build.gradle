@@ -28,3 +28,6 @@ dependencies {
 
     compile kotlib
 }
+android {
+    buildToolsVersion '23.0.3'
+}
