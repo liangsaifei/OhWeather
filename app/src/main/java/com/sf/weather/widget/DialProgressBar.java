@@ -281,4 +281,10 @@ public class DialProgressBar extends View {
         invalidate();
 
     }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        animator.cancel();
+    }
 }

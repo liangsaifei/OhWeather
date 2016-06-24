@@ -41,6 +41,7 @@ public class WindmillView extends View {
     private Bitmap windPoleBitmap;
 
     private Paint paint;
+    private ValueAnimator animator;
 
     public WindmillView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -94,7 +95,7 @@ public class WindmillView extends View {
     private float currentDegrees;
 
     private void initAnimation() {
-        ValueAnimator animator = ValueAnimator.ofFloat(0, sweepDegrees);
+         animator = ValueAnimator.ofFloat(0, sweepDegrees);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
@@ -145,7 +146,13 @@ public class WindmillView extends View {
     }
 
 
-    private final float dip(int dip) {
+    private  float dip(int dip) {
         return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dip, getContext().getResources().getDisplayMetrics());
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        animator.cancel();
     }
 }
